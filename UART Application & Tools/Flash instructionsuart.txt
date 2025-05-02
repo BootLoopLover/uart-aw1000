@@ -1,0 +1,11 @@
+Flash instructions:
+Set your PC’s Ip address to 192.168.1.10 and connect it to your router on port 1 of the yellow ports
+Download the initramfs image, rename it to
+factory.bin, and host it with tftp server.
+Connect your router via Serial using the usb to uart/ttl adapter
+serial parameters: 115200 8N1
+Interrupt U-Boot and run these commands:
+setenv serverip 192.168.1.10
+setenv ipaddr 192.168.1.1
+tftpboot factory.bin
+flash rootfs

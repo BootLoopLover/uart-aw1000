@@ -1,0 +1,40 @@
+Cara2 flash mode UART ke modem Arcadyan AW1000
+pastikan cable lan bersambung dari Komputer anda ke modem Arcadyan AW1000 sblm memulakan proses flashing UART
+
+
+SETUP PUTTY
+1-Buka Putty.exe kemudian pilih serial
+2-Buka Device Manager di komputer anda kemudian semak usb port UART c341a menggunakan COM berapa
+3-Serial line to connect setkan ke 'COM' mngikut port usb UART c341a
+4-Setkan speed (baut) kepada '115200'
+5-Setkan flow control kepada 'none'
+6-Klik Open
+
+
+SETUP TFTPD64.EXE
+1-bukak file location tftpd64.exe
+2-Copy factory.bin dan paste masuk dlm folder tftpd64.exe
+3-Set ip address lan '192.168.1.10'
+4-Set Subnet address '255.255.255.0'
+5-Set Default Gateway '192.168.1.1'
+6-Utk sever interface dlm tftpd64 sila semak ethernet ipv4 lan address di bhgian Network Conection komputer anda
+6-Buka tftpd64.exe setkan server interface mengikut lan adress ipv4 di ats
+
+
+
+Setup boot up ke mode flashing UART dgn cara klik enter brulang kali selepass on modem
+Copy dan paste tiga command scrip di bawah
+1-
+setenv serverip 192.168.1.10
+
+2-
+setenv ipaddr 192.168.1.1
+
+3-
+tftpboot factory.bin
+
+
+Terakhir copy paste command script di bawah
+1-
+flash rootfs
+
