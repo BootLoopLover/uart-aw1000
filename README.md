@@ -1,0 +1,15 @@
+```
+tftpboot aw1000-mibib.bin
+```
+
+```
+flash 0:MIBIB
+```
+
+```
+tftpboot factory.bin
+```
+
+```
+flash rootfs
+```
